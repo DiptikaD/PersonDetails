@@ -1,5 +1,9 @@
 package com.zipcodewilmington;
 
+import com.sun.jdi.StringReference;
+
+import java.util.Arrays;
+
 /**
  * Created by leon on 1/24/18.
  */
@@ -15,6 +19,17 @@ public class PersonHandler {
     
     public String whileLoop() {
         String result = "";
+        Person person1 = new Person("Leon", "Hunter");
+        Person person2 = new Person("Tariq", "Hook");
+        Person person3 = new Person("Dolio", "Durant");
+        Person[] personArray = {person1, person2, person3};
+        PersonHandler personHandler = new PersonHandler(personArray);
+        int counter = 0;
+        StringBuilder myNameIs = new StringBuilder();
+        while (counter < personHandler.personArray.length){
+            myNameIs.append(personArray[counter]);
+            counter++;
+        }
         // create a `counter`
         // while `counter` is less than length of array
             // begin loop
@@ -24,7 +39,7 @@ public class PersonHandler {
                 // append `stringRepresentation` to `result` variable
 
             // end loop
-        return result;
+        return myNameIs.toString();
     }
 
 
@@ -34,6 +49,16 @@ public class PersonHandler {
         // identify initial value
         // identify terminal condition
         // identify increment
+        Person person1 = new Person("Leon", "Hunter");
+        Person person2 = new Person("Tariq", "Hook");
+        Person person3 = new Person("Dolio", "Durant");
+        Person[] personArray = {person1, person2, person3};
+        PersonHandler personHandler = new PersonHandler(personArray);
+        StringBuilder myNameIs = new StringBuilder();
+
+        for (int counter = 0; counter < personHandler.personArray.length; counter++){
+        myNameIs.append(personArray[counter]);
+        }
 
         // use the above clauses to declare for-loop signature
             // begin loop
@@ -42,13 +67,25 @@ public class PersonHandler {
                 // append `stringRepresentation` to `result` variable
             // end loop
 
-        return result;
+        return myNameIs.toString();
     }
 
 
 
     public String forEachLoop() {
         String result = "";
+        Person person1 = new Person("Leon", "Hunter");
+        Person person2 = new Person("Tariq", "Hook");
+        Person person3 = new Person("Dolio", "Durant");
+        Person[] personArray = {person1, person2, person3};
+        PersonHandler personHandler = new PersonHandler(personArray);
+        StringBuilder myNameIs = new StringBuilder();
+        int counter = 0;
+
+        for (Person firstName : personArray){
+            myNameIs.append(personArray[counter]);
+            counter++;
+        }
         // identify array's type
         // identify array's variable-name
 
@@ -58,7 +95,7 @@ public class PersonHandler {
                 // append `stringRepresentation` to `result` variable
             // end loop
 
-        return result;
+        return myNameIs.toString();
     }
 
 
